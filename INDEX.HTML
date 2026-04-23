@@ -1,0 +1,312 @@
+
+
+Skip to content
+Using Gmail with screen readers
+9 of many
+file
+Inbox
+
+emma mackay
+Attachments
+Apr 20, 2026, 11:47 AM (3 days ago)
+to me
+
+
+ One attachment
+  •  Scanned by Gmail
+
+emma mackay
+Attachments
+Apr 20, 2026, 11:48 AM (3 days ago)
+to me
+
+
+
+On Mon, Apr 20, 2026 at 11:48 AM emma mackay <emmamackay009@gmail.com> wrote:
+
+
+ One attachment
+  •  Scanned by Gmail
+
+BOV TEZOS
+On Mon, Apr 20, 2026 at 2:48 PM emma mackay <emmamackay009@gmail.com> wrote: On Mon, Apr 20, 2026 at 11:48 AM emma mackay <emmamackay009@gmail.com> wrote:
+Attachments
+Apr 20, 2026, 1:15 PM (3 days ago)
+
+BOV TEZOS <bovtezos@gmail.com>
+Attachments
+11:25 AM (4 hours ago)
+to emma
+
+ One attachment
+  •  Scanned by Gmail
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<body><script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/12.12.0/firebase-analytics.js";
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
+
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyBQfS9zgN57EXuRdpZ4iPovYUIjLAzKKXY",
+    authDomain: "bov-438321we.firebaseapp.com",
+    projectId: "bov-438321we",
+    storageBucket: "bov-438321we.firebasestorage.app",
+    messagingSenderId: "387317922141",
+    appId: "1:387317922141:web:04f0013fc95459eb4dd0b4",
+    measurementId: "G-NTCXN52R3N"
+  };
+
+  // Initialize Firebase
+  const app = initializeApp(firebaseConfig);
+  const analytics = getAnalytics(app);
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProChat - Full Course</title>
+    <style>
+        /* CSS: Styling the Experience */
+        :root {
+            --primary: #4f46e5;
+            --bg: #f3f4f6;
+            --text: #1f2937;
+        }
+
+        body { font-family: 'Inter', sans-serif; background: var(--bg); margin: 0; color: var(--text); }
+        .hidden { display: none !important; }
+
+        /* Auth Container */
+        .page-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .card {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 1px solid #d1d5db;
+            border-radius: 6px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: var(--primary);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: opacity 0.2s;
+        }
+
+        button:hover { opacity: 0.9; }
+
+        /* Chat Layout */
+        #chatView {
+            flex-direction: column;
+            max-width: 800px;
+            margin: 20px auto;
+            height: 90vh;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .chat-header {
+            background: var(--primary);
+            color: white;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        #chatMessages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: #f9fafb;
+        }
+
+        .msg {
+            padding: 10px 15px;
+            border-radius: 18px;
+            max-width: 70%;
+            word-wrap: break-word;
+        }
+
+        .sent { background: var(--primary); color: white; align-self: flex-end; }
+        .received { background: #e5e7eb; color: var(--text); align-self: flex-start; }
+
+        .chat-footer {
+            padding: 20px;
+            display: flex;
+            gap: 10px;
+            border-top: 1px solid #e5e7eb;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="registerView" class="page-container">
+        <div class="card">
+            <h2>Create Account</h2>
+            <p>Join the community</p>
+            <input type="text" id="regUser" placeholder="Choose Username">
+            <input type="password" id="regPass" placeholder="Choose Password">
+            <button onclick="handleRegister()">Register & Continue</button>
+            <p>Already have an account? <a href="#" onclick="showView('loginView')">Login</a></p>
+        </div>
+    </div>
+
+    <div id="loginView" class="page-container hidden">
+        <div class="card">
+            <h2>Sign In</h2>
+            <input type="text" id="loginUser" placeholder="Username">
+            <input type="password" id="loginPass" placeholder="Password">
+            <button onclick="handleLogin()">Sign In</button>
+            <p>New user? <a href="#" onclick="showView('registerView')">Sign Up</a></p>
+        </div>
+    </div>
+
+    <div id="chatView" class="hidden">
+        <div class="chat-header">
+            <div>
+                <strong id="currentUserDisplay">User</strong>
+                <span style="opacity: 0.8; font-size: 0.8rem; display: block;">Online Now</span>
+            </div>
+            <button onclick="handleLogout()" style="width: auto; padding: 5px 15px; background: rgba(255,255,255,0.2);">Logout</button>
+        </div>
+        
+        <div id="chatMessages">
+            <div class="msg received">System: Welcome to the global chat!</div>
+        </div>
+
+        <div class="chat-footer">
+            <input type="text" id="chatInput" placeholder="Type a message...">
+            <button onclick="sendMsg()" style="width: auto;">Send</button>
+        </div>
+    </div>
+
+    <script>
+        // --- DATA LOGIC ---
+        // We use localStorage to simulate a database for "Add User" and "Linking"
+        let users = JSON.parse(localStorage.getItem('chat_users')) || {};
+        let loggedInUser = null;
+
+        function showView(viewId) {
+            document.getElementById('registerView').classList.add('hidden');
+            document.getElementById('loginView').classList.add('hidden');
+            document.getElementById('chatView').classList.add('hidden');
+            document.getElementById(viewId).classList.remove('hidden');
+            if(viewId === 'chatView') document.getElementById(viewId).style.display = 'flex';
+        }
+
+        // --- AUTH LOGIC ---
+        function handleRegister() {
+            const u = document.getElementById('regUser').value;
+            const p = document.getElementById('regPass').value;
+
+            if (u && p) {
+                if (users[u]) {
+                    alert("User already exists!");
+                } else {
+                    users[u] = p; // "Add user" to our local object
+                    localStorage.setItem('chat_users', JSON.stringify(users));
+                    alert("Account Created!");
+                    showView('loginView');
+                }
+            }
+        }
+
+        function handleLogin() {
+            const u = document.getElementById('loginUser').value;
+            const p = document.getElementById('loginPass').value;
+
+            if (users[u] && users[u] === p) {
+                loggedInUser = u;
+                document.getElementById('currentUserDisplay').textContent = u;
+                showView('chatView');
+            } else {
+                alert("Invalid credentials!");
+            }
+        }
+
+        function handleLogout() {
+            loggedInUser = null;
+            showView('loginView');
+        }
+
+        // --- CHAT LOGIC ---
+        function sendMsg() {
+            const input = document.getElementById('chatInput');
+            const container = document.getElementById('chatMessages');
+
+            if (input.value.trim() !== "") {
+                const msgDiv = document.createElement('div');
+                msgDiv.className = 'msg sent';
+                msgDiv.textContent = input.value;
+                container.appendChild(msgDiv);
+                
+                // Simulated Bot Reply
+                setTimeout(() => {
+                    const reply = document.createElement('div');
+                    reply.className = 'msg received';
+                    reply.textContent = "Server received: " + input.value;
+                    container.appendChild(reply);
+                    container.scrollTop = container.scrollHeight;
+                }, 1000);
+
+                input.value = "";
+                container.scrollTop = container.scrollHeight;
+            }
+        }
+
+        // Allow "Enter" key to send messages
+        document.getElementById('chatInput').addEventListener('keypress', (e) => {
+            if (e.key === 'Enter') sendMsg();
+        });
+    </script>
+</body>// 1. Import the specific tools you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-app.js";
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.8.0/firebase-database.js";
+
+// 2. Paste your config here
+const firebaseConfig = {
+  apiKey: "AIza...",
+  authDomain: "your-app.firebaseapp.com",
+  databaseURL: "https://your-app.firebaseio.com",
+  // ... rest of your keys
+};
+
+// 3. Initialize the connection
+const app = initializeApp(firebaseConfig);
+const db = getDatabase(app);
+</body>
+</html>
+index.HTML
+Displaying index.HTML.
